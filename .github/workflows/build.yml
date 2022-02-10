@@ -15,10 +15,6 @@ jobs:
         with:
           go-version: "^1.17.6"
       - name: build for linux x86_64
-        env:
-          GOOS: linux
-          GOARCH: amd64
-          GOPATH: ..
         run: go build -ldflags "-s -w" -tags osusergo -o out/nextfetch
       - name: build for linux i386
         env:
