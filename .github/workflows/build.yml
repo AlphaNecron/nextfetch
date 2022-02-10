@@ -15,13 +15,25 @@ jobs:
         with:
           go-version: "^1.17.6"
       - name: build for linux x86_64
+        env:
+          GOOS: linux
+          GOARCH: amd64
         run: go build -ldflags "-s -w" -tags osusergo -o out/nextfetch
       - name: build for linux i386
+        env:
+          GOOS: linux
+          GOARCH: 386
         run: go build -ldflags "-s -w" -tags osusergo -o out/nextfetch.i386
       - name: build for win x64
-        run: go build -ldflags "-s -w" -tags osusergo -o out/nextfetch.exe
+        env:
+          GOOS: windows
+          GOARCH: amd64
+        run: go build -ldflags "-s -w" -o out/nextfetch.exe
       - name: build for win x86
-        run: go build -ldflags "-s -w" -tags osusergo -o out/nextfetch.x86.exe
+        env:
+          GOOS: windows
+          GOARCH: 386
+        run: go build -ldflags "-s -w" -o out/nextfetch.x86.exe
       - name: upload to github
         uses: xresloader/upload-to-github-release@v1
         env:
