@@ -16,13 +16,8 @@ func MakeColorBlock(bchar string) string {
 	for i := 0; i < 8; i++ {
 		block += fmt.Sprintf("<fg=%s>%s</>", strconv.Itoa(i), bchar)
 	}
-	block += constants.Linebreak
+	block += strings.Repeat(constants.Linebreak, 2)
 	return block
-}
-
-// goterm
-func MoveCursor(x int, y int) {
-	fmt.Printf("\033[%d;%dH", y, x)
 }
 
 func GetLongestWidth(arr []string) int {
@@ -43,6 +38,7 @@ func CountLine(s string) int {
 	return n
 }
 
+// goterm
 func MoveCursorForward(bias int) {
 	fmt.Printf("\033[%dC", bias)
 }
