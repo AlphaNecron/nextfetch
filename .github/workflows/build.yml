@@ -36,13 +36,16 @@ jobs:
           GOARCH: 386
         run: go build -ldflags "-s -w" -mod vendor -o out/nextfetch.x86.exe
       - name: make arch package
-        uses: mijailr/arch-makepkg-action@1.0.1
+        uses: 2m/arch-pkgbuild-builder@v1.18
+        with:
+          target: pkgbuild
+          pkgname: nextfetch
       - name: upload to github
         uses: xresloader/upload-to-github-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          file: "out/nextfetch*;nextfetch-git-r*-any.pkg.tar.zst"
+          file: "out/nextfetch*;nextfetch-*-any.pkg.tar.zst"
           tags: true
           draft: false
           prerelease: true
