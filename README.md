@@ -21,7 +21,7 @@ go run main.go
 > Copy `nextfetch.default` to `$HOME/.nextfetch` on Linux or `%USERPROFILE%/.nextfetch` on Windows.
 ```json
 {
-    "noAscii": false, // Whether to print ASCII art
+    "noAscii": false, // Whether to disable ASCII art
     "primaryColor": "blue", // Default color, can be either hex without hash, "r,g,b", color name or number (256-color)
     "colorBlock": "▁▁", // Character to be used as color block
     "clearScreen": false // Whether to clear screen on startup
