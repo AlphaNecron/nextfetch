@@ -47,7 +47,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          file: "out/nextfetch*;nextfetch-*.pkg.tar.zst"
+          file: "out/nextfetch*;nextfetch/*.pkg.tar.zst"
           tags: true
           draft: false
           prerelease: true
