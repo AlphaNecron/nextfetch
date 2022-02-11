@@ -1,6 +1,6 @@
 # Maintainer: AlphaNecron <necronqwq@outlook.com>
 pkgname=nextfetch-git
-pkgver=r0.0.df1fb9c
+pkgver=0.0.0
 _pkgname=nextfetch
 pkgrel=1
 pkgdesc="Simple cross-platform fetch program, written in Go"
@@ -16,7 +16,7 @@ sha256sums=('SKIP')
 
 pkgver() {
   cd $_pkgname
-  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+  printf "r0.0.%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
 build() {
