@@ -9,6 +9,7 @@ jobs:
     name: build
     env:
       GO111MODULE: on
+      GOROOT: ""
     steps:
       - name: checkout
         uses: actions/checkout@v2

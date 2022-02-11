@@ -21,7 +21,7 @@ pkgver() {
 
 build() {
   cd "$srcdir/$_pkgname"
-  GOROOT=/tmp make DESTDIR="$pkgdir" PREFIX="/usr" build
+  make DESTDIR="$pkgdir" PREFIX="/usr" build
 }
 
 package() {
