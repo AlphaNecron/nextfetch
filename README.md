@@ -17,6 +17,13 @@ make
 sudo make install
 ```
 
+#### Installation for Arch Linux
+```sh
+git clone https://github.com/AlphaNecron/nextfetch.git
+cd nextfetch/nextfetch
+makepkg -sri
+```
+
 #### Configuration
 > Do `make install-config` on Linux or copy `nextfetch.default` to `%USERPROFILE%/.nextfetch` on Windows.
 ```json lines

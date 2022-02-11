@@ -1,0 +1,14 @@
+pkgbase = nextfetch-git
+	pkgdesc = Simple cross-platform fetch program, written in Go
+	pkgver = 0.0.0
+	pkgrel = 1
+	url = https://github.com/AlphaNecron/nextfetch
+	arch = any
+	license = MIT
+	makedepends = go>=1.17,
+	makedepends = git
+	optdepends = lsb_release: Distro detection
+	source = git+https://github.com/AlphaNecron/nextfetch.git
+	sha256sums = SKIP
+
+pkgname = nextfetch-git
