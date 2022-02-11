@@ -9,7 +9,6 @@ jobs:
     name: build
     env:
       GO111MODULE: on
-      GOROOT: ""
     steps:
       - name: checkout
         uses: actions/checkout@v2
@@ -38,6 +37,8 @@ jobs:
         run: go build -ldflags "-s -w" -mod vendor -o out/nextfetch.x86.exe
       - name: make arch package
         uses: 2m/arch-pkgbuild-builder@v1.18
+        env:
+          GOROOT: ""
         with:
           target: pkgbuild
           pkgname: nextfetch
