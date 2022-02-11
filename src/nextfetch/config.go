@@ -10,7 +10,7 @@ import (
 var config Config
 
 type Config struct {
-	NoAscii      bool   `json:"noImage"`
+	NoAscii      bool   `json:"noAscii"`
 	PrimaryColor string `json:"primaryColor"`
 	ColorBlock   string `json:"colorBlock"`
 	ClearScreen  bool   `json:"clearScreen"`

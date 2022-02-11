@@ -21,6 +21,8 @@ func Nextfetch() {
 		art.Color = config.PrimaryColor
 		if a, ok := ascii.ARTS[os]; ok {
 			art = a
+		} else if strings.Contains(os, "Windows") {
+			art = ascii.ARTS["Windows"]
 		}
 		color.Println(fmt.Sprintf("<fg=%s>%s</>", art.Color, art.Art))
 		utils.MoveCursorUp(utils.CountLine(art.Art))
