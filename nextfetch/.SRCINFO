@@ -7,7 +7,7 @@ pkgbase = nextfetch-git
 	license = MIT
 	makedepends = go>=1.17,
 	makedepends = git
-	optdepends = lsb_release: Distro detection
+	optdepends = lsb-release: Distro detection
 	source = git+https://github.com/AlphaNecron/nextfetch.git
 	sha256sums = SKIP
 
