@@ -7,6 +7,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: build
+    env:
+      GO111MODULE: on
     steps:
       - name: checkout
         uses: actions/checkout@v2
@@ -14,23 +16,25 @@ jobs:
         uses: actions/setup-go@v2
         with:
           go-version: "^1.17.6"
+      - name: setup vendor
+        run: go mod vendor
       - name: build for linux x86_64
-        run: go build -ldflags "-s -w" -tags osusergo -o out/nextfetch
+        run: go build -ldflags "-s -w" -mod vendor -tags osusergo -o out/nextfetch
       - name: build for linux i386
         env:
           GOOS: linux
           GOARCH: 386
-        run: go build -ldflags "-s -w" -tags osusergo -o out/nextfetch.i386
+        run: go build -ldflags "-s -w" -mod vendor -tags osusergo -o out/nextfetch.i386
       - name: build for win x64
         env:
           GOOS: windows
           GOARCH: amd64
-        run: go build -ldflags "-s -w" -o out/nextfetch.exe
+        run: go build -ldflags "-s -w" -mod vendor -o out/nextfetch.exe
       - name: build for win x86
         env:
           GOOS: windows
           GOARCH: 386
-        run: go build -ldflags "-s -w" -o out/nextfetch.x86.exe
+        run: go build -ldflags "-s -w" -mod vendor -o out/nextfetch.x86.exe
       - name: upload to github
         uses: xresloader/upload-to-github-release@v1
         env:

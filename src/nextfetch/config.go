@@ -19,7 +19,7 @@ type Config struct {
 func setDefConf() {
 	config = Config{
 		NoAscii:      false,
-		PrimaryColor: "yellow",
+		PrimaryColor: "blue",
 		ColorBlock:   "\xe2\x96\x81\xe2\x96\x81",
 		ClearScreen:  false,
 	}
